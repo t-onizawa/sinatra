@@ -1,0 +1,16 @@
+<ul>
+	<% @comment.each do |comment| %>
+	<li data-id="<%= comment.id %>">
+		<%= comment.body %>
+		<span class="deleteCmd" style="cursor:pointer; color:#f33;">[x]</span>
+	</li>
+	<% end %>
+</ul>
+<h2>Add New</h2>
+<form action="/new" method="post">
+	<input type="text" name="body">
+	<input type="submit" value="post">
+</form>
+<% @js.each do |js| %>
+<script src="<%= js %>"></script>
+<% end %>
